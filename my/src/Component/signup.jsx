@@ -1,115 +1,187 @@
-import React, { useState } from 'react';
-import './signUp.css';
-export const SignUp = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [visible, setVisible] = useState(false);
+import React from 'react'
+import { Link } from 'react-router-dom'
+import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'
+import { RxAvatar } from 'react-avatar'
+import { useState } from 'react'
+import axios from 'axios'
 
-  const togglePasswordVisibility = () => {
-    setVisible(!visible);
-  };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log({ name, email, password });
-  };
+export const Signup = () => {
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [avatar, setAvatar] = useState(null)
+    const [visible, setVisible] = useState(false)
+
+    const handleFileSubmit = (e) => {
+        const file = e.target.files[0]
+
+        if(file) {
+            const filepath = URL.createObjectURL(file)
+            console.log(filepath)
+            setAvatar(file)
+        }
+    }
+
+
+    const handleSubmit = async (e) => {
+
+        e.preventDefault()
+        const formData = new FormData()
+
+        formData.append('name', name)
+        formData.append('email', email)
+        formData.append('password', password)
+        formData.append('avatar', avatar)
+
+        const config = {
+            headers: {
+                'Content-Type': 'multipart/form-data',
+                
+              }
+            }
+
+        axios.post('http://localhost:5000/create-user',formData,config).then((res) => {
+            console.log(res.data)
+        }).catch((err) => {       
+            console.log(err)
+        })  
+    }
+
   return (
-    <>
-      <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
-        <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-          <img
-            alt="Your Company"
-            src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
-            className="mx-auto h-10 w-auto"
-          />
-          <h2 className="mt-10 text-center text-2xl font-bold tracking-tight text-gray-900">
-            Sign up for your account
-          </h2>
-        </div>
-
-        <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form onSubmit={handleSubmit} className="space-y-6">
+    <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+      <div className="sm:mx-auto sm:w-full sm:max-w-md">
+        <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
+          Register as a new user
+        </h2>
+      </div>
+      <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+        <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+        <form className="space-y-6" onSubmit={handleSubmit}>
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-900">
-                Name
+              <label
+                htmlFor="name"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Full Name
               </label>
-              <div className="mt-2">
+              <div className="mt-1">
                 <input
-                  id="name"
-                  name="name"
                   type="text"
+                  name="name"
+                  autoComplete="name"
                   required
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-indigo-600 sm:text-sm"
+                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                 />
               </div>
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-900">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Email address
               </label>
-              <div className="mt-2">
+              <div className="mt-1">
                 <input
-                  id="email"
-                  name="email"
                   type="email"
-                  required
+                  name="email"
                   autoComplete="email"
+                  required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-indigo-600 sm:text-sm"
+                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                 />
               </div>
             </div>
 
             <div>
-              <div className="flex items-center justify-between">
-                <label htmlFor="password" className="block text-sm font-medium text-gray-900">
-                  Password
-                </label>
-              </div>
-              <div className="mt-2 relative">
+              <label
+                htmlFor="password"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Password
+              </label>
+              <div className="mt-1 relative">
                 <input
-                  id="password"
+                  type={visible ? "text" : "password"}
                   name="password"
-                  type={visible ? 'text' : 'password'}
-                  required
                   autoComplete="current-password"
+                  required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-indigo-600 sm:text-sm"
+                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                 />
-                <button
-                  type="button"
-                  onClick={togglePasswordVisibility}
-                  className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-500"
+                {visible ? (
+                  <AiOutlineEye
+                    className="absolute right-2 top-2 cursor-pointer"
+                    size={25}
+                    onClick={() => setVisible(false)}
+                  />
+                ) : (<AiOutlineEyeInvisible
+                    className="absolute right-2 top-2 cursor-pointer"
+                    size={25}
+                    onClick={() => setVisible(true)}
+                  />
+                )}
+              </div>
+            </div>
+
+            <div>
+              <label
+                htmlFor="avatar"
+                className="block text-sm font-medium text-gray-700"
+              ></label>
+              <div className="mt-2 flex items-center">
+                <span className="inline-block h-8 w-8 rounded-full overflow-hidden">
+                  {avatar ? (
+                    <img
+                      src={URL.createObjectURL(avatar)}
+                      alt="avatar"
+                      className="h-full w-full object-cover rounded-full"
+                    />
+                  ) : (
+                    <RxAvatar className="h-8 w-8" />
+                  )}
+                </span>
+                <label
+                  htmlFor="file-input"
+                  className="ml-5 flex items-center justify-center px-4 py-2 border border-gray-300
+                   rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
                 >
-                  {visible ? 'Hide' : 'Show'}
-                </button>
+                  <span>Upload a file</span>
+                  <input
+                    type="file"
+                    name="avatar"
+                    id="file-input"
+                    accept=".jpg,.jpeg,.png"
+                    onChange={handleFileSubmit}
+                    className="sr-only"
+                  />
+                </label>
               </div>
             </div>
 
             <div>
               <button
                 type="submit"
-                className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-indigo-600"
+                className="group relative w-full h-[40px] flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700"
               >
-                Sign up
+                Submit
               </button>
             </div>
+            <div className={` w-full`}>
+              <h4>Already have an account?</h4>
+              <Link to="/login" className="text-blue-600 pl-2">
+                Sign In
+              </Link>
+            </div>
           </form>
-
-          <p className="mt-10 text-center text-sm text-gray-500">
-            Already have an account?{' '}
-            <a href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">
-              Sign in
-            </a>
-          </p>
         </div>
       </div>
-    </>
+    </div>
   );
-};
+}
