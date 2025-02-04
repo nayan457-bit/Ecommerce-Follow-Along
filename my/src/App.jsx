@@ -1,21 +1,22 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import { Route,Routes } from 'react-router-dom'
-import {Login} from './Component/login'
-import { SignUp } from './Component/signup'
+import { Route, Routes } from 'react-router-dom'
+
+
+import { Home } from './page/Home'
+
+import { Login } from './Components/login'
+import { Signup } from './Components/Signup'
+import Productform from './Components/Productform'
 
 function App() {
 
   return (
     <>
     <Routes>
-      <Route path="/login" element={<Login/>} />
-      <Route path="/Signup" element={<SignUp/>}/>
-      
+      <Route path="/Home" element={<Home/>} />
+      <Route path="/Login" element={<Login/>} />
+      <Route path="/Signup" element={<Signup/>} />
+      <Route path="/Productform" element={<Productform/>} />
     </Routes>
-   
     </>
   )
 }
