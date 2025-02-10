@@ -39,3 +39,37 @@ The first milestone focuses on laying the foundation for the e-commerce applicat
 - Initial deployment for testing. 
 
 This milestone ensures a solid starting point for feature development.
+
+
+
+Key Tasks:
+Build the Sign-Up Page UI:
+-
+
+Create a simple, user-friendly form with fields for Name, Email, and Password.
+The page should be visually appealing and mobile-responsive.
+
+Add Form Validation:
+-
+Email Validation: Check if the email is in a valid format (e.g., example@example.com).
+
+
+Password Validation: Ensure the password meets the minimum length (e.g., at least 6 characters) and includes both letters and numbers for security.
+
+Submit Form:
+-
+When the user submits the form, the data should be validated and sent to the backend for further processing (like user registration).
+Key Components to Implement:
+
+Frontend (React.js):
+-
+Create a SignUp component with form fields.
+Implement client-side validation for email and password.
+Provide feedback to the user if there are validation errors.
+Use React Hook Form or Formik for handling form state and validation.
+
+Backend (Node.js/Express):
+-
+Ensure the backend has a route for handling user registration (e.g., POST /api/auth/register).
+Check the data sent from the frontend for validity.
+Hash the password before saving it to MongoDB.
