@@ -1,7 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 
 export const Productcard = ({image,name,price,description}) => {
+  const{currentIndex,setCurrentIndex}=useState(0)
+  useEffect(() => {
+    setInterval(() => {
+      setCurrentIndex((prev)=> prev + 1%image.length)
+    }, 2000);
+    }),
+  },[image]);
+const currentimage=image[currentIndex];
   return (
     <div className="bg-neutral-200 p-4 rounded-lg shadow-md flex justify-between flex-col">
       <div className='w-full'>
