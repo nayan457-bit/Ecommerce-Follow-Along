@@ -99,25 +99,40 @@ API documentation (with routes for products, users, etc.)
 Any third-party tools or services used (e.g., MongoDB Atlas, payment gateways)
 
 Card Component Milestone
+-
 How to Display a Single Card for Multiple Products?
-Create a Dynamic Component: Design a single card component that accepts product details as props.
-Use Mapping: Using array mapping to iterate over the product list and render a card for each product.
+
+*Create a Dynamic Component*: Design a single card component that accepts product details as props.
+
+
+*Use Mapping*: Using array mapping to iterate over the product list and render a card for each product.
 Pass Data Dynamically: Passing unique product information (e.g., name, price, image) to each card.
-Maintain Consistency: Ensuring the layout remains uniform for all products.
+
+
+*Maintain Consistency*: Ensuring the layout remains uniform for all products.
 How We Implemented the Code
-Created a Card Component:
+
+*Created a Card Component*:
 Defined a functional component that accepts props such as name, price, and image.
 Styled the component to ensure a visually appealing display.
-Used Props for Dynamic Content:
+
+
+*Used Props for Dynamic Content*:
 Passed product details to the Card component dynamically.
 Used destructuring to extract and use the props inside the component.
-Mapped Through Product Data:
+
+
+*Mapped Through Product Data*:
 Stored the product data in an array.
 Used the .map() function to iterate through the array and render a card for each product.
-Ensured a Consistent Layout:
+
+
+*Ensured a Consistent Layout*:
 Applied consistent styling to maintain uniformity across all cards.
 Used flexbox or grid layout for proper alignment on the products page.
-Optimized for Reusability:
+
+
+*Optimized for Reusability*:
 Designed the component to be reusable across different sections of the application.
 Ensured scalability by making it adaptable to different datasets.
 
