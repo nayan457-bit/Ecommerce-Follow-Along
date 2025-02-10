@@ -39,3 +39,55 @@ The first milestone focuses on laying the foundation for the e-commerce applicat
 - Initial deployment for testing. 
 
 This milestone ensures a solid starting point for feature development.
+
+Key Deliverables:
+Requirement Analysis:
+
+Clearly define the core features, which are essential for both the backend and frontend:
+Authentication: Login, registration, JWT authentication.
+Product Catalog: Display products with dynamic filtering and sorting.
+Shopping Cart: Handle real-time updates to cart.
+Admin Panel: Manage products, orders, users.
+Order Tracking & Notifications: Notify users of order status updates.
+Environment Setup:
+
+Backend (Node.js/Express):
+Initialize a new Node.js project using npm init.
+Install the necessary dependencies: express, mongoose (MongoDB ORM), dotenv (for environment variables), cors (for cross-origin requests), etc.
+Set up basic Express server, routes, and middleware.
+
+Frontend (React.js):
+Initialize a React app using create-react-app or configure Webpack/Babel manually.
+Install front-end dependencies like react-router-dom (for routing) and axios (for making HTTP requests to the backend).
+Set up a folder structure for components, services, and pages.
+
+Version Control (Git):
+Initialize a Git repository, commit initial project files, and push to GitHub for collaboration and version control.
+Backend:
+
+Create a basic Express server:
+
+Set up an API structure with endpoints for products, users, and orders.
+Connect to MongoDB using Mongoose and define schemas for users, products, and orders.
+For example, a User Schema might include fields like email, password, and role (admin/customer).
+Set up RESTful API:
+
+Implement basic GET, POST, PUT, DELETE routes for products (to be managed by the admin) and users (for registration and login).
+Ensure these routes are structured in a RESTful manner.
+
+Frontend:
+Create a React app:
+Set up React Router for navigating between pages (e.g., Home, Product Listing, Cart, Admin Panel).
+Build basic UI components such as ProductCard, Navbar, and Footer.
+Integrate Axios to make API calls to the backend (for fetching products, user registration, login, etc.).
+
+Styling:
+You can use CSS-in-JS libraries (like styled-components) or frameworks like Bootstrap or Material-UI for quick styling.
+Documentation:
+
+Write a README.md that includes:
+Project overview
+Steps for setting up the development environment
+API documentation (with routes for products, users, etc.)
+Any third-party tools or services used (e.g., MongoDB Atlas, payment gateways)
+
