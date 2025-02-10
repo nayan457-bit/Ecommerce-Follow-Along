@@ -49,8 +49,8 @@ Product Catalog: Display products with dynamic filtering and sorting.
 Shopping Cart: Handle real-time updates to cart.
 Admin Panel: Manage products, orders, users.
 Order Tracking & Notifications: Notify users of order status updates.
-Environment Setup:
 
+Environment Setup:
 Backend (Node.js/Express):
 Initialize a new Node.js project using npm init.
 Install the necessary dependencies: express, mongoose (MongoDB ORM), dotenv (for environment variables), cors (for cross-origin requests), etc.
@@ -66,12 +66,11 @@ Initialize a Git repository, commit initial project files, and push to GitHub fo
 Backend:
 
 Create a basic Express server:
-
 Set up an API structure with endpoints for products, users, and orders.
 Connect to MongoDB using Mongoose and define schemas for users, products, and orders.
 For example, a User Schema might include fields like email, password, and role (admin/customer).
-Set up RESTful API:
 
+Set up RESTful API:
 Implement basic GET, POST, PUT, DELETE routes for products (to be managed by the admin) and users (for registration and login).
 Ensure these routes are structured in a RESTful manner.
 
