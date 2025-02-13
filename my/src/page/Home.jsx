@@ -40,7 +40,7 @@ useEffect(() => {
       setLoading(false);
     });
 }, []);
-  return (
+  return  (
     <div className='w-full min-h-screen bg-neutral-800'>
     <div className="grid grid-cols-5 gap-4 p-4">{
         productdetails.map((product,index)=>{
@@ -50,4 +50,3 @@ useEffect(() => {
             )
     })}</div></div>
   )
-}
