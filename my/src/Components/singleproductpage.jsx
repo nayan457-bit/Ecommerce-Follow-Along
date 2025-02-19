@@ -12,6 +12,24 @@ const Singleproductpage = () => {
     const {quantity,setquantity}=useState(0)
     const {id}=useParams()
 
+
+    const addcart=async(email,productid,productname,quantity)=>{
+        try{
+           const response=await axios.post('http//localhost:3000/product/cart',
+            {
+                email:email,
+                productid:productid,
+                productname:productname,
+                quantity:quantity
+            }
+           )
+           console.log(response.data)
+        }
+        catch(err){
+            console.log(err)
+        }
+    }
+
     useEffect(() => {
         const fetchProduct = async () => {
             try {
@@ -29,7 +47,7 @@ const Singleproductpage = () => {
         };
 
         fetchProduct();
-    }, [id, setError, setLoading, setproduct]);
+    },[id]);
     const handleIncrement=()=>{
         setquantity(prev=>prev+1)
     }
@@ -37,12 +55,7 @@ const Singleproductpage = () => {
     const handleDecrement=()=>{
        setquantity((prev)=>(prev>1?prev-1:1))
     }
-  if(loading){
-        return <p>Loading</p>
-    }   
-    else if ( error){
-        return <p>Error</p>
-    }
+
 
   return (
     <div>
@@ -156,7 +169,7 @@ const Singleproductpage = () => {
                                 </div>
                             </div>
                             <div className="flex flex-wrap gap-x-5 my-3">
-                                <button className="bg-black text-white px-5 py-2 rounded-full hover:bg-neutral-800 hover:-translate-y-1.5 active:translate-y-0 transition-transform duration-200 ease-in-out active:duration-0 active:ease-linear">
+                                <button onClick={addcart} className="bg-black text-white px-5 py-2 rounded-full hover:bg-neutral-800 hover:-translate-y-1.5 active:translate-y-0 transition-transform duration-200 ease-in-out active:duration-0 active:ease-linear">
                                     Add to Cart
                                 </button>
                             </div>
