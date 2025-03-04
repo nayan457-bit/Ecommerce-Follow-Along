@@ -39,3 +39,14 @@ The first milestone focuses on laying the foundation for the e-commerce applicat
 - Initial deployment for testing. 
 
 This milestone ensures a solid starting point for feature development.
+
+
+milestone 21#
+
+This project implements an address form page for a user profile. The form captures and stores the user's address input.
+
+Features
+
+Navigation from profile to address form page.
+
+State management for address input.
