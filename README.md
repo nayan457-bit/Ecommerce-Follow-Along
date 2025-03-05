@@ -50,3 +50,11 @@ Features
 Navigation from profile to address form page.
 
 State management for address input.
+
+
+#milestone 22
+
+ Overview:
+This project sets up a backend endpoint to store user addresses inside their profile in the database.
+Create an endpoint to receive an address from the frontend address form.
+Add the received address to the addresses array inside the user collection.
