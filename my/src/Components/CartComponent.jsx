@@ -7,7 +7,7 @@ export default function CartProduct({ _id, email, images, quantity, price }) {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [quantityVal, setQuantityVal] = useState(quantity);
     useEffect(() => {
-        if (!images || images.length === 0) return;
+        if (!images || images.length=== 0) return;
         const interval = setInterval(() => {
             setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
         }, 2000);
