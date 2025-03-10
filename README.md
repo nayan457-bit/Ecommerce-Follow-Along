@@ -39,3 +39,13 @@ The first milestone focuses on laying the foundation for the e-commerce applicat
 - Initial deployment for testing. 
 
 This milestone ensures a solid starting point for feature development.
+
+
+
+Update Product Data in MongoDB
+Overview
+In Milestone 13, we will implement an endpoint that allows users to update existing product data in MongoDB. On the frontend, we will add an Edit button on the product card, which will:
+✅ Send the product data to a form
+✅ Auto-fill the form with existing details
+✅ Allow users to modify the data
+✅ Save the updated data to the database
