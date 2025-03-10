@@ -7,7 +7,6 @@ import { Productcardforseller } from './Components/productcardforseller';
 import { Singleproductpage } from './Components/Singleproductpage';
 import { Singlecard } from './Components/Singlecard';
 import Cart from './page/cart';
-import SelectAddress from './Components/SelectAddress';
 
 function App() {
   return (
@@ -21,7 +20,6 @@ function App() {
         <Route path="/product/:id" element={<Singlecard/>}/>
         <Route path="/product/:id" element={<Singleproductpage/>}/>
         <Route path='/cart'  element={<Cart/>}/>
-        <Route path="*" element={<SelectAddress/>} />
       </Routes>
     </>
   );

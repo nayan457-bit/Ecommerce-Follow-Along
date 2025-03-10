@@ -56,3 +56,6 @@ milestone #24
 
 This milestone involves adding essential features for the order placement process. It includes creating a "Place Order" button in the cart page, developing a "Select Address" page to choose a delivery address, and setting up a Mongoose schema to store order details. Additionally, a backend endpoint will be implemented to fetch user addresses. By the end of this milestone, the core functionality for placing an order will be in place.
 
+
+
+Milestone 20 In Milestone 20, we focused on developing a system to fetch and display user profile data. First, we created the /profile API endpoint, which retrieves user details from the server and stores them in an object. Next, we built the Profile.jsx React component, which fetches the user data from the /profile endpoint and displays it in a clean, user-friendly format on the frontend. This milestone enables users to view their profile information directly in the application.
