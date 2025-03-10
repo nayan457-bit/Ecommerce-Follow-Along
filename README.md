@@ -73,3 +73,12 @@ Backend (Node.js/Express):
 Ensure the backend has a route for handling user registration (e.g., POST /api/auth/register).
 Check the data sent from the frontend for validity.
 Hash the password before saving it to MongoDB.
+
+
+
+milestone 5
+Sign-Up Page with Form Validation
+
+Project Overview
+
+This project focuses on creating a Sign-Up page where users can register by providing their details such as Name, Email, and Password. The page will feature form validation to ensure that the user inputs valid data before submission.
