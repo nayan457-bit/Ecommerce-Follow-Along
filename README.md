@@ -136,3 +136,19 @@ Used flexbox or grid layout for proper alignment on the products page.
 Designed the component to be reusable across different sections of the application.
 Ensured scalability by making it adaptable to different datasets.
 
+
+
+Milestone 7: User Authentication - Login Endpoint
+Overview
+In this milestone, we will implement the Login Endpoint, which allows users to log in using their credentials. This involves retrieving the user from the database and validating the provided password.
+
+Steps
+1. Create Login Endpoint
+Accept user credentials:
+Email/Username
+Password
+Retrieve the corresponding user from the database based on the provided email/username.
+2. Validate Password
+Use bcrypt to hash the entered password.
+Compare the hashed password with the stored hashed password for authentication.
+
