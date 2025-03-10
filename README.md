@@ -66,4 +66,9 @@ In this milestone, we will create an API endpoint to send all product data to th
 - Fetched the data from the frontend using `fetch`.
 - Stored the data in state and dynamically displayed it using the `ProductCard` component.
 
+milestone 10
+Product Management with Mongoose
+Overview
+This project involves creating a Product Schema using Mongoose, defining the structure of product data, and building an endpoint to add products to a MongoDB database. We will also ensure proper validation to maintain data integrity.
+
 
