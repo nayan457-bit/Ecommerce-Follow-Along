@@ -70,3 +70,13 @@ Create an endpoint to receive product, user, and address details.
 Retrieve user _id using the user’s email.
 Create separate orders for each product with the same address.
 Store order details in the MongoDB order collection using the order schema.
+
+Milestone 26 - Get User Orders Endpoint
+Objective:
+Create a backend endpoint to get all orders of a user.
+Steps:
+Create an endpoint to receive the user’s email.
+Retrieve user _id using the email.
+Use the _id to fetch all orders of that user.
+Send all user orders in the response.
+
