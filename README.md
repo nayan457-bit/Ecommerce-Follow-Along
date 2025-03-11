@@ -59,3 +59,14 @@ This milestone involves adding essential features for the order placement proces
 
 
 Milestone 20 In Milestone 20, we focused on developing a system to fetch and display user profile data. First, we created the /profile API endpoint, which retrieves user details from the server and stores them in an object. Next, we built the Profile.jsx React component, which fetches the user data from the /profile endpoint and displays it in a clean, user-friendly format on the frontend. This milestone enables users to view their profile information directly in the application.
+
+
+
+Milestone 25 - Place Order Endpoint
+Objective:
+Create a backend endpoint to place an order.
+Steps:
+Create an endpoint to receive product, user, and address details.
+Retrieve user _id using the user’s email.
+Create separate orders for each product with the same address.
+Store order details in the MongoDB order collection using the order schema.
