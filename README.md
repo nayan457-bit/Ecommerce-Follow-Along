@@ -80,3 +80,5 @@ Retrieve user _id using the email.
 Use the _id to fetch all orders of that user.
 Send all user orders in the response.
 
+Milestone 27: My Orders Page
+We created a "My Orders" page for the frontend of the Ecommerce-Follow-Along project. This page displays all the orders placed by the user.
