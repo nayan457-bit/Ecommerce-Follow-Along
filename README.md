@@ -82,3 +82,8 @@ Send all user orders in the response.
 
 Milestone 27: My Orders Page
 We created a "My Orders" page for the frontend of the Ecommerce-Follow-Along project. This page displays all the orders placed by the user.
+
+
+# Milestone 28 - Cancel Order Feature
+Added a "Cancel Order" button in the My Orders page and created a backend endpoint to update order status to "Cancelled".  
+Users can cancel their orders unless they are already marked as "Cancelled".
