@@ -4,11 +4,12 @@ const userrouter = require('./src/Controller/user');
 const { get } = require('mongoose');
 const productrouter = require('./src/Controller/Product');
 const cors = require('cors');
-
+const cookieParser = require('cookie-parser');
 const app=express();
 
 app.use(express.json());
 app.use(cors());
+app.use(cookieParser());
 
 require('dotenv').config({
     path:'./src/config/.env'
@@ -21,7 +22,7 @@ app.get('/',(req,res)=>{
     res.send('Hello World');
 })
 
-
+app.use('/order', orderrouter);
 app.use('/auth', userrouter);
 app.listen(PORT,async()=>{
 
@@ -35,6 +36,8 @@ app.listen(PORT,async()=>{
 });
 app.use('/auth', userrouter)
 app.use('/product', productrouter);
+
+res.cookie('autherization', token)
 
 app.get('/', (req,res)=>{
     res.send('Product router');

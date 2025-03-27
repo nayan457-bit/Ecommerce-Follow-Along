@@ -103,3 +103,8 @@ In this milestone, we implemented global state management using Redux in our Eco
 
 # Milestone 32 - Accessing Global State with Redux
 In this milestone, we integrated Redux to store and access the user's email across all pages. We used the dispatch method in the Login page to save the email in the global state. The useSelector hook was used to retrieve the stored email in other pages, enabling seamless access to user data. This milestone reinforced Redux state management concepts and improved global state handling in our project.
+
+
+# Milestone 33: JWT Authentication with Cookies
+Overview
+In this milestone, we will learn how to generate a JWT (JSON Web Token) and store it inside a cookie. This will help in maintaining authentication for users in a secure way.
